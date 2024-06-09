@@ -21,27 +21,27 @@ if plt == "Windows":
 np.set_printoptions(suppress=True)
 
 # Set up the page layout
-st.set_page_config(page_title="ChromaticScan", page_icon=":camera:")
+st.set_page_config(page_title="BardScan", page_icon=":camera:")
 
 
-st.title("ChromaticScan")
+st.title("BargScan")
 
 st.caption(
     "A ResNet 34-based Algorithm for Robust Plant Disease Detection with 99.2% Accuracy Across 39 Different Classes of Plant Leaf Images."
 )
 
-st.write("Try clicking a leaf image and watch how an AI Model will detect its disease.")
+st.write("Barg tasvirini bosib koʻring va AI modeli uning kasalligini qanday aniqlashini tomosha qiling.")
 
 with st.sidebar:
     img = Image.open("./Images/leaf.png")
     st.image(img)
-    st.subheader("About ChromaticScan")
+    st.subheader("About BargScan")
     st.write(
-        "ChromaticScan - bu o'simlik kasalliklarini aniqlash uchun maxsus ishlab chiqilgan zamonaviy konvolyutsion neyron tarmog'i (CNN) algoritmi."
+        "BargScan - bu o'simlik kasalliklarini aniqlash uchun maxsus ishlab chiqilgan zamonaviy konvolyutsion neyron tarmog'i (CNN) algoritmi."
         )
 
     st.write(
-        "ChromaticScan juda mustahkam va aniq boʻlib ishlab chiqilgan boʻlib, turli sharoit va muhitlarda oʻsimlik kasalliklarini aniqlash qobiliyatiga ega. Uning yordamida o‘simlik kasalliklarini tez va aniq tashxislash, fermer va bog‘bonlarga kasallik tarqalishining oldini olish va hosilning nobud bo‘lishini minimallashtirish uchun zudlik bilan chora ko‘rish imkonini beradi. Yuqori darajadagi aniqlik va foydalanish qulayligi bilan ChromaticScan qishloq xo'jaligi sanoatida o'simlik kasalliklarini aniqlash va boshqarish usullarini inqilob qilishga tayyor."
+        "BargScan juda mustahkam va aniq boʻlib ishlab chiqilgan boʻlib, turli sharoit va muhitlarda oʻsimlik kasalliklarini aniqlash qobiliyatiga ega. Uning yordamida o‘simlik kasalliklarini tez va aniq tashxislash, fermer va bog‘bonlarga kasallik tarqalishining oldini olish va hosilning nobud bo‘lishini minimallashtirish uchun zudlik bilan chora ko‘rish imkonini beradi. Yuqori darajadagi aniqlik va foydalanish qulayligi bilan ChromaticScan qishloq xo'jaligi sanoatida o'simlik kasalliklarini aniqlash va boshqarish usullarini inqilob qilishga tayyor."
     )
 
     st.write(
