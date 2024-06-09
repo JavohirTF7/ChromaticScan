@@ -37,11 +37,11 @@ with st.sidebar:
     st.image(img)
     st.subheader("About ChromaticScan")
     st.write(
-        "ChromaticScan is a state-of-the-art convolutional neural network (CNN) algorithm that is specifically designed for detecting plant diseases. It utilizes transfer learning by fine-tuning the ResNet 34 model on a large dataset of leaf images to achieve an impressive 99.2% accuracy in detecting various plant diseases. The algorithm is trained to identify specific patterns and features in the leaf images that are indicative of different types of diseases, such as leaf spots, blights, and wilts."
-    )
+        "ChromaticScan - bu o'simlik kasalliklarini aniqlash uchun maxsus ishlab chiqilgan zamonaviy konvolyutsion neyron tarmog'i (CNN) algoritmi."
+        )
 
     st.write(
-        "ChromaticScan is designed to be highly robust and accurate, with the ability to detect plant diseases in a wide range of conditions and environments. It can be used to quickly and accurately diagnose plant diseases, allowing farmers and gardeners to take immediate action to prevent the spread of the disease and minimize crop losses. With its high level of accuracy and ease of use, ChromaticScan is poised to revolutionize the way plant diseases are detected and managed in the agricultural industry."
+        "ChromaticScan juda mustahkam va aniq boʻlib ishlab chiqilgan boʻlib, turli sharoit va muhitlarda oʻsimlik kasalliklarini aniqlash qobiliyatiga ega. Uning yordamida o‘simlik kasalliklarini tez va aniq tashxislash, fermer va bog‘bonlarga kasallik tarqalishining oldini olish va hosilning nobud bo‘lishini minimallashtirish uchun zudlik bilan chora ko‘rish imkonini beradi. Yuqori darajadagi aniqlik va foydalanish qulayligi bilan ChromaticScan qishloq xo'jaligi sanoatida o'simlik kasalliklarini aniqlash va boshqarish usullarini inqilob qilishga tayyor."
     )
 
     st.write(
@@ -177,7 +177,7 @@ def Plant_Disease_Detection(_img_file_path):
     model = load_learner(export_file_path, "export.pkl")
     prediction = model.predict(img_file_path)[0]
     if prediction not in classes:
-        prediction_sentence = f"The uploaded image is {prediction}, which is not compatible with the application. Please upload an image of a plant leaf for disease detection."
+        prediction_sentence = f"Siz yuklagan rasm {prediction}, bu ilovaga mos kelmaydi. Iltimos, kasallikni aniqlash uchun o'simlik bargining rasmini yuklang."
         return prediction_sentence
     prediction_sentence = classes_and_descriptions[prediction]
     return prediction_sentence
@@ -191,17 +191,5 @@ if submit:
     elif input_method == "Camera Input":
         img_file_path = camera_file_img
     prediction = Plant_Disease_Detection(img_file_path)
-    with st.spinner(text="This may take a moment..."):
+    with st.spinner(text="Bu biroz vaqt olishi munkin..."):
         st.write(prediction)
-
-footer = """
-<div style="text-align: center; font-size: medium; margin-top:50px;">
-    If you find ChromaticScan useful or interesting, please consider starring it on GitHub.
-    <hr>
-    <a href="https://github.com/SaiJeevanPuchakayala/ChromaticScan" target="_blank">
-    <img src="https://img.shields.io/github/stars/SaiJeevanPuchakayala/ChromaticScan.svg?style=social" alt="GitHub stars">
-  </a>
-</div>
-"""
-
-st.markdown(footer, unsafe_allow_html=True)
